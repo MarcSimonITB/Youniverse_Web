@@ -223,23 +223,23 @@ const galeria = [
 const ediciones = [
   {
     nombre: 'Standard',
-    desc: 'Figura personalizada con pose neutral y base simple.',
+    desc: 'Figura personalizada, pose neutral, base simple. Solo la figura impresa.',
     precio: '€39.99',
-    imagen: 'assets/standard.jpg',   // <-- cambia esto por tu imagen
+    imagen: 'SRC/SamuraiRender.png',   // <-- cambia esto por tu imagen
     grande: false
   },
   {
     nombre: 'Deluxe',
-    desc: 'Figura + pose dinámica a tu gusto + hoja de personaje.',
+    desc: 'Figura personalizada, pose dinámica a tu gusto y hoja de personaje.',
     precio: '€59.99',
-    imagen: 'assets/deluxe.jpg',     // <-- cambia esto por tu imagen
+    imagen: 'SRC/Deluxe.png',     // <-- cambia esto por tu imagen
     grande: false
   },
   {
     nombre: 'Deluxe + Digital',
-    desc: 'Todo lo del Deluxe + póster A3 + render digital animado para redes.',
+    desc: 'Figura personalizada, pose dinámica a tu gusto, hoja de personaje, poster A3 de la figura y render digital animado del modelo 3D.',
     precio: '€89.99',
-    imagen: 'assets/premium.jpg',    // <-- cambia esto por tu imagen
+    imagen: 'SRC/Premium.png',    // <-- cambia esto por tu imagen
     grande: true
   },
 ];
