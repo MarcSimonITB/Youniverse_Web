@@ -213,39 +213,33 @@ const productos = [
 
 // ─── DATOS DE GALERÍA ─────────────────────────────
 const galeria = [
-  { emoji: '👨‍🚀', fondo: 'linear-gradient(135deg,#050714,#0a1550)', nombre: 'Manel', edicion: 'Samurai', clase: 'alto' },
-  { emoji: '👨‍🚀', fondo: 'linear-gradient(135deg,#050714,#0a1550)', nombre: 'Marc', edicion: 'Superhero', clase: 'alto' },
-  { emoji: '👨‍🚀', fondo: 'linear-gradient(135deg,#050714,#0a1550)', nombre: 'Judith', edicion: 'Saiyan', clase: 'alto' },
-  { emoji: '👨‍🚀', fondo: 'linear-gradient(135deg,#050714,#0a1550)', nombre: 'Laura', edicion: 'Rockstar', clase: 'alto' }
+  { video: 'SRC/logoanim.mp4',  nombre: 'Manel',  edicion: 'Samurai',   clase: 'alto' },
+  { video: 'SRC/logoanim.mp4',   nombre: 'Marc',   edicion: 'Superhero', clase: 'alto' },
+  { video: 'SRC/logoanim.mp4', nombre: 'Judith', edicion: 'Saiyan',    clase: 'alto' },
+  { video: 'SRC/logoanim.mp4',  nombre: 'Laura',  edicion: 'Rockstar',  clase: 'alto' }
 ];
 
 // ─── DATOS DE EDICIONES ───────────────────────────
 const ediciones = [
   {
-    emoji: '⚡',
-    nombre: 'Standar',
-    desc: 'Estética cyberpunk con neones y efectos holo-digitales.',
-    cantidad: '9 figuras disponibles',
+    nombre: 'Standard',
+    desc: 'Figura personalizada con pose neutral y base simple.',
     precio: '€39.99',
-    fondo: 'linear-gradient(135deg, #0d0d1a, #1a0a2e)',
+    imagen: 'assets/standard.jpg',   // <-- cambia esto por tu imagen
     grande: false
   },
   {
-    emoji: '🧙',
     nombre: 'Deluxe',
-    desc: 'Guerreros mágicos, criaturas míticas y portales dimensionales.',
-    cantidad: '8 figuras disponibles',
-    precio: '€69.99',
-    fondo: 'linear-gradient(135deg, #0a0f10, #0a2010)',
+    desc: 'Figura + pose dinámica a tu gusto + hoja de personaje.',
+    precio: '€59.99',
+    imagen: 'assets/deluxe.jpg',     // <-- cambia esto por tu imagen
     grande: false
   },
   {
-    emoji: '🌌',
     nombre: 'Deluxe + Digital',
-    desc: 'Trajes estelares, efectos de nebulosa y bases de asteroide.',
-    cantidad: '12 figuras disponibles',
+    desc: 'Todo lo del Deluxe + póster A3 + render digital animado para redes.',
     precio: '€89.99',
-    fondo: 'linear-gradient(135deg, #050714, #0a1550)',
+    imagen: 'assets/premium.jpg',    // <-- cambia esto por tu imagen
     grande: true
   },
 ];
@@ -466,11 +460,14 @@ function renderizarGaleria() {
 
   for (var i = 0; i < galeria.length; i++) {
     var item = galeria[i];
+
     var div = document.createElement('div');
     div.className = 'galeria-item ' + item.clase;
-    div.style.background = item.fondo;
+
     div.innerHTML = `
-      ${item.emoji}
+      <video class="galeria-video" muted loop playsinline preload="metadata">
+        <source src="${item.video}" type="video/mp4" />
+      </video>
       <div class="galeria-overlay">
         <div>
           <h4>${item.nombre}</h4>
@@ -478,6 +475,18 @@ function renderizarGaleria() {
         </div>
       </div>
     `;
+
+    div.addEventListener('mouseenter', function() {
+      var video = this.querySelector('.galeria-video');
+      video.play();
+    });
+
+    div.addEventListener('mouseleave', function() {
+      var video = this.querySelector('.galeria-video');
+      video.pause();
+      video.currentTime = 0; 
+  });
+
     grid.appendChild(div);
   }
 }
@@ -494,12 +503,10 @@ function renderizarEdiciones() {
     card.className = 'edicion-card' + (ed.grande ? ' grande' : '');
 
     card.innerHTML = `
-      <div class="edicion-imagen" style="background: ${ed.fondo}">
-        ${ed.emoji}
+      <div class="edicion-imagen" style="background-image: url('${ed.imagen}'); background-size: cover; background-position: center;">
         <div class="edicion-overlay">
           <div class="edicion-nombre">${ed.nombre}</div>
           <div class="edicion-desc">${ed.desc}</div>
-          <div class="edicion-cant">✦ ${ed.cantidad}</div>
         </div>
       </div>
       <div class="edicion-pie">
