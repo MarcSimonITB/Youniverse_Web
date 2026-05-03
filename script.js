@@ -110,7 +110,7 @@ function initCursor() {
 const productos = [
   {
     id: 1,
-    emoji: '🧑‍🚀',
+    emoji: '👨‍🚀',
     fondo: 'linear-gradient(135deg, #050714, #0a1550)',
     serie: 'Space Odyssey',
     nombre: 'Astronauta del Universo',
@@ -183,24 +183,46 @@ const productos = [
     id: 8,
     emoji: '🌌',
     fondo: 'linear-gradient(135deg, #080010, #100018)',
-    serie: 'Space Odyssey',
+    serie: 'Space Wars',
     nombre: 'Nebula Guardian',
+    precio: 69.99,
+    badges: [],
+    filtro: 'space'
+  },
+  {
+    id: 9,
+    emoji: '☀',
+    fondo: 'linear-gradient(135deg, #050714, #4d3a16)',
+    serie: 'Medieval 2.0',
+    nombre: 'Caballero del Sol',
+    precio: 69.99,
+    badges: [],
+    filtro: 'space'
+  },
+  {
+    id: 10,
+    emoji: '⌛',
+    fondo: 'linear-gradient(135deg, #100018, #2c3e50)',
+    serie: 'Time Travel',
+    nombre: 'Hechicero del Tiempo',
     precio: 64.99,
-    badges: ['ltd'],
+    badges: ['new'],
     filtro: 'space'
   }
 ];
 
 // ─── DATOS DE GALERÍA ─────────────────────────────
 const galeria = [
-  { emoji: '🧑‍🚀', fondo: 'linear-gradient(135deg,#050714,#0a1550)', nombre: 'Carlos M.', edicion: 'Space Odyssey', clase: 'alto' },
+  { emoji: '👨‍🚀', fondo: 'linear-gradient(135deg,#050714,#0a1550)', nombre: 'Carlos M.', edicion: 'Space Odyssey', clase: 'alto' },
   { emoji: '🤖', fondo: 'linear-gradient(135deg,#0d0d1a,#1a0a2e)', nombre: 'Elena V.', edicion: 'Cyber Genesis', clase: '' },
   { emoji: '🧙', fondo: 'linear-gradient(135deg,#0a0f10,#0a2010)', nombre: 'Rubén F.', edicion: 'Fantasy Realm', clase: '' },
   { emoji: '🌸', fondo: 'linear-gradient(135deg,#14080e,#28081a)', nombre: 'Sofía L.', edicion: 'Anime Core', clase: 'ancho' },
   { emoji: '📺', fondo: 'linear-gradient(135deg,#0e0e0e,#1a1400)', nombre: 'Miguel P.', edicion: 'Retro Wave', clase: '' },
   { emoji: '💠', fondo: 'linear-gradient(135deg,#050714,#001a2e)', nombre: 'Ana G.', edicion: 'Digital Soul', clase: '' },
   { emoji: '🎮', fondo: 'linear-gradient(135deg,#100a14,#1a0a0a)', nombre: 'David K.', edicion: 'Gamer Edition', clase: '' },
-  { emoji: '🌌', fondo: 'linear-gradient(135deg,#080010,#100018)', nombre: 'Laura M.', edicion: 'Space Odyssey', clase: '' }
+  { emoji: '🌌', fondo: 'linear-gradient(135deg,#080010,#100018)', nombre: 'Laura M.', edicion: 'Space Odyssey', clase: '' },
+  { emoji: '☀', fondo: 'linear-gradient(135deg,#fc4a1a,#f7b733)', nombre: 'Steve T.', edicion: 'Space Odyssey', clase: '' },
+  { emoji: '⌛', fondo: 'linear-gradient(135deg,#2c3e50,#000000)', nombre: 'Toni J.', edicion: 'Space Odyssey', clase: '' }
 ];
 
 // ─── DATOS DE EDICIONES ───────────────────────────
