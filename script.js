@@ -236,7 +236,7 @@ const ediciones = [
     grande: false
   },
   {
-    nombre: 'Deluxe + Digital',
+    nombre: 'Premium',
     desc: 'Figura personalizada, pose dinámica a tu gusto, hoja de personaje, poster A3 de la figura y render digital animado del modelo 3D.',
     precio: '€89.99',
     imagen: 'SRC/Premium.png',    // <-- cambia esto por tu imagen
