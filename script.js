@@ -527,14 +527,11 @@ function initFiltros() {
 
   for (var i = 0; i < botones.length; i++) {
     botones[i].addEventListener('click', function() {
-      // Quitar clase activo de todos
       var todos = document.querySelectorAll('.cat-btn');
       for (var j = 0; j < todos.length; j++) {
         todos[j].classList.remove('activo');
       }
-      // Añadir al que se ha clickado
       this.classList.add('activo');
-      // Filtrar
       renderizarProductos(this.dataset.filtro);
     });
   }
@@ -564,7 +561,6 @@ function initHeroRotante() {
 
 // ─── FORMULARIO CONFIGURADOR ──────────────────────
 function initFormulario() {
-  // Selector de edición
   var opcionesEd = document.querySelectorAll('.opcion-ed');
   for (var i = 0; i < opcionesEd.length; i++) {
     opcionesEd[i].addEventListener('click', function() {
@@ -576,7 +572,6 @@ function initFormulario() {
     });
   }
 
-  // Selector de pose
   var opcionesPose = document.querySelectorAll('.opcion-pose');
   for (var k = 0; k < opcionesPose.length; k++) {
     opcionesPose[k].addEventListener('click', function() {
@@ -624,7 +619,6 @@ function suscribirse() {
 
 // ─── ANIMACIÓN DE ENTRADA AL HACER SCROLL ────────
 function initAnimacionEntrada() {
-  // Añadir clase a elementos que queremos animar
   var elementos = document.querySelectorAll(
     '.producto-card, .paso-card, .testimonio-card, .red-card, .edicion-card, .galeria-item'
   );
@@ -635,7 +629,6 @@ function initAnimacionEntrada() {
     elementos[i].style.transition = 'opacity 0.5s ease, transform 0.5s ease';
   }
 
-  // Observar cuando entran en pantalla
   var observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
       if (entry.isIntersecting) {
