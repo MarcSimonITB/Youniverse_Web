@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>YouNiverse – Tu figura. Tu universo.</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- CURSOR PERSONALIZADO -->
+  <div class="cursor-punto" id="cursorPunto"></div>
+  <div class="cursor-anillo" id="cursorAnillo"></div>
+
+  <!-- FONDO DE ESTRELLAS -->
+  <canvas id="canvasEstrellas"></canvas>
+
+  <!-- BARRA SUPERIOR ANIMADA -->
+  <div class="top-bar">
+    <div class="top-bar-track">
+      <span>🚀 ENVÍO GRATIS en pedidos +60€</span>
+      <span>✦ NUEVA EDICIÓN: CYBER GENESIS ya disponible</span>
+      <span>💠 Versión digital incluida en Premium</span>
+      <span>🎁 DROPS EXCLUSIVOS cada viernes</span>
+      <span>✦ Figuras 100% personalizadas · Solo aquí</span>
+      <!-- duplicado para que el loop sea continuo -->
+      <span>🚀 ENVÍO GRATIS en pedidos +60€</span>
+      <span>✦ NUEVA EDICIÓN: CYBER GENESIS ya disponible</span>
+      <span>💠 Versión digital incluida en Premium</span>
+      <span>🎁 DROPS EXCLUSIVOS cada viernes</span>
+      <span>✦ Figuras 100% personalizadas · Solo aquí</span>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-container">
+
+      <img src="SRC/logo.png" alt="logo" width="200px" height="84px">
+
+      <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#figuras">Figuras</a>
+        <a href="#crea">Crea la tuya</a>
+        <a href="#galeria">Galería</a>
+        <a href="#como-funciona">Cómo funciona</a>
+        <a href="#ediciones">Ediciones</a>
+        <a href="#nosotros">Nosotros</a>
+      </nav>
+
+      <div class="header-icons">
+        <button class="icon-btn" onclick="alert('Próximamente: búsqueda')" title="Buscar">
+          🔍
+        </button>
+        <button class="icon-btn" title="Favoritos">
+          🤍
+        </button>
+        <button class="icon-btn" title="Mi cuenta">
+          👤
+        </button>
+        <button class="icon-btn cart-btn" id="abrirCarrito" title="Carrito">
+          🛒
+          <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+
+    <!-- VIDEO DE FONDO -->
+    <video class="hero-video" autoplay muted loop playsinline>
+      <source src="SRC/demoreel.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Capa oscura sobre el vídeo para que el texto se lea bien -->
+    <div class="hero-overlay"></div>
+
+    <!-- Todo el texto centrado -->
+    <div class="hero-content">
+      <p class="etiqueta">✦ Arte · Identidad · Universo</p>
+      <h1>TU FIGURA.<br/><span>TU UNIVERSO.</span></h1>
+      <p class="hero-desc">
+        Convierte tu identidad en una figura de arte única. Cada pieza es una extensión de quién eres, diseñada para ti en tu propio universo.
+      </p>
+      <div class="hero-botones">
+        <a href="#crea" class="btn-principal">Crea tu figura →</a>
+        <a href="#galeria" class="btn-secundario">Ver galería</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-numero">4.800+</span>
+          <span class="stat-texto">Figuras creadas</span>
+        </div>
+        <div class="separador"></div>
+        <div class="stat">
+          <span class="stat-numero">98%</span>
+          <span class="stat-texto">Satisfacción</span>
+        </div>
+        <div class="separador"></div>
+        <div class="stat">
+          <span class="stat-numero">6</span>
+          <span class="stat-texto">Ediciones únicas</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- FIGURAS DESTACADAS -->
+  <section class="seccion" id="figuras">
+    <div class="contenedor">
+      <div class="seccion-header">
+        <div>
+          <p class="subtitulo-seccion">Colección actual</p>
+          <h2>FIGURAS <span>DESTACADAS</span></h2>
+        </div>
+        <a href="#galeria" class="ver-todo">Ver todo →</a>
+      </div>
+      <div class="grid-productos" id="gridProductos">
+      </div>
+    </div>
+  </section>
+
+   <!-- CÓMO FUNCIONA -->
+  <section class="seccion seccion-oscura" id="como-funciona">
+    <div class="contenedor">
+      <div class="seccion-header centrado">
+        <div>
+          <p class="subtitulo-seccion">Simple y mágico</p>
+          <h2>CÓMO <span>FUNCIONA</span></h2>
+        </div>
+      </div>
+
+      <div class="pasos-grid">
+        <div class="paso-card">
+          <span class="paso-num">01</span>
+          <div class="paso-icono">📸</div>
+          <h3>Envíanos tu foto</h3>
+          <p>Sube 2–3 fotos tuyas. Cuanto más detalle, mejor resultado tendrá tu figura.</p>
+        </div>
+        <div class="paso-card">
+          <span class="paso-num">02</span>
+          <div class="paso-icono">🎨</div>
+          <h3>Elige tu universo</h3>
+          <p>Selecciona edición, pose, colores y extras. Nuestros artistas lo hacen realidad en 3D.</p>
+        </div>
+        <div class="paso-card">
+          <span class="paso-num">03</span>
+          <div class="paso-icono">⚙️</div>
+          <h3>Validación previa</h3>
+          <p>Te mandamos una previsualización digital para que apruebes antes de imprimir.</p>
+        </div>
+        <div class="paso-card">
+          <span class="paso-num">04</span>
+          <div class="paso-icono">🚀</div>
+          <h3>Tu figura llega</h3>
+          <p>Envío en caja premium con certificado de autenticidad. Lista para coleccionar.</p>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top: 48px;">
+        <a href="#crea" class="btn-principal">Quiero la mía →</a>
+        <p style="margin-top:14px; color: var(--blanco-40); font-size:13px;">⏱ Entrega estimada: 5–7 días laborables</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section class="seccion" id="galeria">
+    <div class="contenedor">
+      <div class="seccion-header">
+        <div>
+          <p class="subtitulo-seccion">Creaciones reales</p>
+          <h2>GALERÍA DE <span>UNIVERSOS</span></h2>
+        </div>
+        <a href="#" class="ver-todo">Ver todas →</a>
+      </div>
+      <div class="grid-galeria" id="gridGaleria">
+      </div>
+    </div>
+  </section>
+<!-- CREA TU FIGURA -->
+  <section class="seccion seccion-oscura" id="crea">
+    <div class="contenedor">
+      <div class="crea-grid">
+
+        <div class="crea-texto">
+          <p class="subtitulo-seccion">Solo en YouNiverse</p>
+          <h2>¿TE IMAGINAS VERTE<br/>EN TU <span class="texto-cyan">PROPIO UNIVERSO?</span></h2>
+          <p class="texto-gris">
+            Sube tu foto, elige tu edición y personaliza cada detalle. Nuestros artistas digitales crearán tu figura en 5–7 días.
+          </p>
+          <ul class="lista-features">
+            <li>✦ Personalización completa de outfit y colores</li>
+            <li>✦ Render digital animado incluido en Premium</li>
+            <li>✦ Figura física enviada a cualquier parte del mundo</li>
+            <li>✦ Certificado de autenticidad numerado</li>
+          </ul>
+        </div>
+
+        <div class="formulario-card">
+          <h3>Configurador rápido</h3>
+
+          <div class="campo">
+            <label>¿Cuál es tu edición?</label>
+            <div class="selector-edicion">
+              <div class="opcion-ed seleccionado" data-ed="cyber">⚡ Cyber</div>
+              <div class="opcion-ed" data-ed="fantasy">🧙 Fantasy</div>
+              <div class="opcion-ed" data-ed="space">🌌 Space</div>
+              <div class="opcion-ed" data-ed="retro">📺 Retro</div>
+            </div>
+          </div>
+
+          <div class="campo">
+            <label>Tipo de figura</label>
+            <select class="campo-select">
+              <option>Standard – €39.99</option>
+              <option>Premium – €69.99</option>
+              <option>Premium + Digital – €89.99</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label>Pose</label>
+            <div class="selector-pose">
+              <div class="opcion-pose seleccionado">🧍 Neutral</div>
+              <div class="opcion-pose">⚔️ Acción</div>
+              <div class="opcion-pose">🧘 Meditación</div>
+              <div class="opcion-pose">🕺 Dinámica</div>
+            </div>
+          </div>
+
+          <div class="campo">
+            <label>Notas personales</label>
+            <textarea class="campo-textarea" placeholder="Describe tu estilo, colores favoritos, personaje inspiración…"></textarea>
+          </div>
+
+          <button class="btn-principal w100" onclick="showToast('✦ Solicitud enviada — te contactaremos pronto!')">
+            Solicitar mi figura →
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+ 
+  <!-- PACKS -->
+  <section class="seccion" id="ediciones">
+    <div class="contenedor">
+      <div class="seccion-header">
+        <div>
+          <p class="subtitulo-seccion">Universos disponibles</p>
+          <h2>ELIGE TU <span>PACK</span></h2>
+        </div>
+      </div>
+      <div class="grid-ediciones" id="gridEdiciones">
+        <!-- Se genera con JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIOS -->
+  <section class="seccion seccion-oscura" id="testimonios">
+    <div class="contenedor">
+      <div class="seccion-header centrado">
+        <div>
+          <p class="subtitulo-seccion">Lo que dicen</p>
+          <h2>REACCIONES <span>REALES</span></h2>
+        </div>
+      </div>
+      <div class="grid-testimonios">
+        <div class="testimonio-card">
+          <div class="estrellas">★★★★★</div>
+          <p>"Cuando la abrí se me fue la voz. Es exactamente como me imaginaba, con mi skin de Valorant favorita. Es arte."</p>
+          <div class="autor">
+            <div class="avatar">🎮</div>
+            <div>
+              <strong>Alejandro R.</strong>
+              <span>Streamer · Twitch</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonio-card destacado">
+          <div class="estrellas">★★★★★</div>
+          <p>"La compré como regalo para mi hermano gamer y lloró de emoción. La edición Cyber con su personaje de anime es perfecta."</p>
+          <div class="autor">
+            <div class="avatar">✨</div>
+            <div>
+              <strong>Marta S.</strong>
+              <span>Coleccionista · Barcelona</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonio-card">
+          <div class="estrellas">★★★★★</div>
+          <p>"La uso como imagen de perfil en todas mis redes. La versión digital que incluyen es un render súper chulo."</p>
+          <div class="autor">
+            <div class="avatar">🎨</div>
+            <div>
+              <strong>Laura M.</strong>
+              <span>Ilustradora · TikTok</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE NOSOTROS -->
+  <section class="seccion about-seccion" id="nosotros">
+    <div class="contenedor">
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="planeta">
+            <div class="planeta-core">🌌</div>
+            <div class="anillo anillo-1"></div>
+            <div class="anillo anillo-2"></div>
+          </div>
+        </div>
+        <div class="about-texto">
+          <p class="subtitulo-seccion">Nuestra historia</p>
+          <h2>UNA FIGURA NO ES<br/>SOLO <span class="texto-cyan">UN OBJETO</span></h2>
+          <p class="texto-gris">
+            YouNiverse nació de una idea simple: los fans merecen verse reflejados en el arte que coleccionan. No como una copia de un personaje existente, sino como <strong>la mejor versión de sí mismos</strong>.
+          </p>
+          <p class="texto-gris">
+            Somos un equipo de artistas 3D, diseñadores y frikis que creemos que la identidad personal es la mejor franquicia del mundo.
+          </p>
+          <div class="valores">
+            <span class="valor-tag">🎯 Identidad propia</span>
+            <span class="valor-tag">🤝 Arte accesible</span>
+            <span class="valor-tag">🌍 Comunidad global</span>
+            <span class="valor-tag">✦ Ediciones limitadas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REDES SOCIALES -->
+  <section class="seccion seccion-oscura" id="redes">
+    <div class="contenedor">
+      <div class="seccion-header centrado">
+        <div>
+          <p class="subtitulo-seccion">Únete a la comunidad</p>
+          <h2>SÍGUENOS EN <span>REDES</span></h2>
+        </div>
+      </div>
+      <div class="grid-redes">
+        <div class="red-card">
+          <div class="red-icono">📱</div>
+          <h3>TikTok</h3>
+          <p>Antes/Después de figuras, procesos 3D y reacciones épicas.</p>
+          <span class="red-seguidores">12.4K seguidores</span>
+          <a href="#" class="red-boton">@youniversefig</a>
+        </div>
+        <div class="red-card">
+          <div class="red-icono">📸</div>
+          <h3>Instagram</h3>
+          <p>Galería de todas nuestras figuras, drops exclusivos y backstage.</p>
+          <span class="red-seguidores">8.7K seguidores</span>
+          <a href="#" class="red-boton">@youniversefig</a>
+        </div>
+        <div class="red-card">
+          <div class="red-icono">▶️</div>
+          <h3>YouTube Shorts</h3>
+          <p>"¿Cómo te verías en un anime?" y speedpaints de figuras reales.</p>
+          <span class="red-seguidores">3.2K suscriptores</span>
+          <a href="#" class="red-boton">YouNiverse Oficial</a>
+        </div>
+      </div>
+      <p class="hashtag">#TuFiguraTuUniverso</p>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="newsletter-seccion">
+    <div class="newsletter-contenido">
+      <p class="subtitulo-seccion">Sé el primero en saberlo</p>
+      <h2>DROPS EXCLUSIVOS<br/>DIRECTO A TI</h2>
+      <p class="texto-gris">Recibe alertas de nuevas ediciones, descuentos y sneak peeks antes que nadie.</p>
+      <div class="newsletter-form">
+        <input type="email" id="emailNewsletter" placeholder="tu@email.com" />
+        <button onclick="suscribirse()">Entrar al universo →</button>
+      </div>
+      <p style="margin-top:12px; color:var(--blanco-40); font-size:12px;">Sin spam. Cancelación inmediata.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-marca">
+        <div class="footer-logo">You<span>Niverse</span></div>
+        <p>"Una figura no es solo un objeto,<br/>es una extensión de quién eres."</p>
+        <div class="footer-redes">
+          <a href="#" class="f-red">📱</a>
+          <a href="#" class="f-red">📸</a>
+          <a href="#" class="f-red">▶️</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Figuras</h4>
+        <ul>
+          <li><a href="#">Standard – €39.99</a></li>
+          <li><a href="#">Premium – €69.99</a></li>
+          <li><a href="#">Premium + Digital – €89.99</a></li>
+          <li><a href="#">Ediciones Especiales</a></li>
+          <li><a href="#">Pack Regalo</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ediciones</h4>
+        <ul>
+          <li><a href="#">⚡ Cyber Genesis</a></li>
+          <li><a href="#">🧙 Fantasy Realm</a></li>
+          <li><a href="#">🌌 Space Odyssey</a></li>
+          <li><a href="#">📺 Retro Wave</a></li>
+          <li><a href="#">🎌 Anime Core</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Ayuda</h4>
+        <ul>
+          <li><a href="#">Cómo funciona</a></li>
+          <li><a href="#">Seguimiento de pedido</a></li>
+          <li><a href="#">Preguntas frecuentes</a></li>
+          <li><a href="#">Contacto</a></li>
+          <li><a href="#">Devoluciones</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 YouNiverse · Todos los derechos reservados</span>
+      <div class="metodos-pago">
+        <span>VISA</span>
+        <span>Mastercard</span>
+        <span>PayPal</span>
+        <span>Apple Pay</span>
+        <span>Bizum</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CARRITO (drawer lateral) -->
+  <div class="overlay" id="overlay" onclick="cerrarCarrito()"></div>
+  <div class="carrito-drawer" id="carritoDrawer">
+    <div class="carrito-cabecera">
+      <h3>🛒 Mi Universo</h3>
+      <button onclick="cerrarCarrito()" class="cerrar-btn">✕</button>
+    </div>
+    <div class="carrito-body" id="carritoBody">
+      <div class="carrito-vacio">
+        <p style="font-size:48px">🌌</p>
+        <p>Tu carrito está vacío</p>
+        <small>Explora las figuras y añade las tuyas</small>
+      </div>
+    </div>
+    <div class="carrito-pie" id="carritoPie" style="display:none">
+      <div class="total-row">
+        <span>Total</span>
+        <span id="totalCarrito">€0.00</span>
+      </div>
+      <button class="btn-principal w100" onclick="checkout()">Finalizar pedido →</button>
+      <p style="text-align:center; font-size:12px; color:var(--blanco-40); margin-top:10px;">🔒 Pago seguro · Envío asegurado</p>
+    </div>
+  </div>
+
+  <!-- TOAST (notificación) -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
