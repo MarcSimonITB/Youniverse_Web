@@ -222,7 +222,7 @@ const ediciones = [
     nombre: 'Standard',
     desc: 'Figura personalizada, pose neutral, base simple. Solo la figura impresa.',
     precio: '€39.99',
-    imagen: 'SRC/SamuraiRender.png',   // <-- cambia esto por tu imagen
+    imagen: 'SRC/standar.png',   // <-- cambia esto por tu imagen
     grande: false
   },
   {

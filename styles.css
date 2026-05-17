@@ -35,7 +35,6 @@
   z-index: 9998;
   transform: translate(-50%, -50%);
   opacity: 0.6;
-  /* El anillo sigue al ratón con un pequeño retraso (se hace en JS) */
   transition: width 0.2s, height 0.2s, opacity 0.2s, border-color 0.2s;
 }
 
@@ -360,7 +359,6 @@ nav a:hover {
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  /* Fondo oscuro por si el vídeo no carga */
   background: #050714;
 }
 
