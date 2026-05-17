@@ -210,7 +210,7 @@ const productos = [
 
 // ─── DATOS DE GALERÍA ─────────────────────────────
 const galeria = [
-  { video: 'SRC/logoanim.mp4',  nombre: 'Manel',  edicion: 'Samurai',   clase: 'alto' },
+  { video: 'SRC/Samuraianim.mp4',  nombre: 'Manel',  edicion: 'Samurai',   clase: 'alto' },
   { video: 'SRC/Superheroanim.mp4',   nombre: 'Marc',   edicion: 'Superhero', clase: 'alto' },
   { video: 'SRC/Saiyananim.mp4', nombre: 'Judith', edicion: 'Saiyan',    clase: 'alto' },
   { video: 'SRC/Rockstaranim.mp4',  nombre: 'Laura',  edicion: 'Rockstar',  clase: 'alto' }
